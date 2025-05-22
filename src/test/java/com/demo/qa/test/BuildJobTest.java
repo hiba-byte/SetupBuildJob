@@ -16,8 +16,12 @@ public class BuildJobTest {
 	@BeforeMethod
 	public void setUp()
 	{
-		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\chromedriver.exe");
-		driver=new ChromeDriver();
+		 System.setProperty("webdriver.gecko.driver", 
+            "C:\\Users\\Hiba\\Downloads\\geckodriver-v0.36.0-win32\\geckodriver.exe");
+
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+        driver = new FirefoxDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //Implicit wait
 		driver.get("https://demoqa.com/");
